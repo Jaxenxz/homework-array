@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* หัวข้อหลัก */
+.main-title {
+    text-align: center;
+    color: #3a3a3a;
+    margin-bottom: 30px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.main-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    border-radius: 2px;
+}
+
+/* การ์ดสินค้า */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    padding: 20px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-icon {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.product-icon i {
+    font-size: 40px;
+    color: #6a11cb;
+    background: rgba(106, 17, 203, 0.1);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+}
+
+.product-title {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.product-details {
+    padding: 0 10px;
+}
+
+.product-details p {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.total {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ddd;
+    font-weight: 600;
+    color: #2575fc;
+}
+
+/* ตารางสรุป */
+.section-title {
+    margin: 40px 0 20px;
+    color: #3a3a3a;
+    font-weight: 600;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    overflow: hidden;
+}
+
+.modern-table thead {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
+
+.modern-table th, 
+.modern-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.modern-table tbody tr:hover {
+    background-color: rgba(106, 17, 203, 0.05);
+}
+
+/* สรุปการสั่งซื้อ */
+.order-summary {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.summary-title {
+    margin-bottom: 20px;
+    color: #3a3a3a;
+    font-weight: 600;
+}
+
+.summary-box {
+    margin-bottom: 25px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+
+.total-amount {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2575fc;
+    border-bottom: none;
+    margin-top: 10px;
+}
+
+.shipping-free {
+    color: #4CAF50;
+}
+
+.shipping-note {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #6c757d;
+    text-align: center;
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Kanit', sans-serif;
+}
+
+.checkout-btn:hover {
+    background: linear-gradient(to right, #5910ac, #1a68e5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(106, 17, 203, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .modern-table th,
+    .modern-table td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
